@@ -99,7 +99,7 @@ a:visited{
 }
 
 footer{
-    background-color:rgb(41, 39, 40);
+    background-color:rgb(95,189,110);
     border-radius: 7px;
     margin: 15px;
     padding: 15px;
@@ -188,7 +188,6 @@ ol {
 .Founders{
     float: left;
     width: 20%;
-    color: violet;
     margin-left: 1%;
     overflow:auto;
 }
@@ -202,13 +201,11 @@ ol {
 .Supporters{
     float:right;
     width: 20%;
-    color: violet;
 }
 
         .Mission{
             float:left;
             width: 20%;
-            color: violet;
             clear: left;
             margin-left: 1%;
             overflow: auto;
@@ -223,7 +220,6 @@ ol {
         .success{
             float:left;
             width: 20%;
-            color: violet;
         }
 
 .success img{
