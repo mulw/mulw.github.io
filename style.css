@@ -1,235 +1,184 @@
-
-/* General Styles*/
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.content {
     background-color: #f2f2f2;
-    padding: 40px;
+    padding: 20px;
 }
 
-h2 {
-    color: #333;
+h1 {
+    font-size: 24px;
+    margin: 0;
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
+p {
+    font-size: 16px;
+    margin: 0;
 }
 
-li {
+main {
+    padding: 20px;
+}
+
+#news-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.news-article {
     margin-bottom: 20px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-
-/* Custom Styling for Designing Organization */
-body {
-    background-color: #fff;
-}
-
-header h1 {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-ul {
-    margin-bottom: 30px;
-}
-
-li {
+.news-article h2 {
     font-size: 18px;
-    color: #555;
+    margin: 0;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 20px;
-}
-
-footer p {
+.news-article p {
     font-size: 16px;
-    line-height: 1.5;
 }
 
-footer a {
-    color: #fff;
-    font-weight: bold;
+.news-article time {
+    font-size: 12px;
+    color: #999;
 }
 
-  
-  .logv {
+/* Styles for the search bar */
+#search-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Adjust the margin-top as desired */
-  }
-  
-  .logv video {
-    width: 200px; /* Adjust the width as desired */
-    height: auto;
-    margin: 0 10px; /* Adjust the margin as desired */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+    margin-bottom: 20px;
+}
 
-.slideshow-container {
-    position: relative;
-    margin-bottom: 30px;
-    width: 500px; /* Adjust the width as desired */
-    height: 300px; /* Adjust the height as desired */
-    overflow: hidden;
+#search-form input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
 }
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+
+#search-form button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
-.slide.active {
-    opacity: 1;
+
+/* Styles for the filter form */
+#filter-form {
+    display: flex;
+    margin-bottom: 20px;
 }
-.slide img {
-    width: 100%;
-    height: auto;
+
+#filter-form label {
+    display: block;
+    margin-right: 10px;
 }
-header img{
-        display: block;
-        margin: 20px auto; /* Adjust the margin as desired */
-        max-width: 10%;
-        height: auto;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        
-}.container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .container video {
-    width: 400px; /* Adjust the width as desired */
-    height: auto;
-    margin: 0 10px; /* Adjust the margin as desired */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .banner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 20px; /* Adjust the margin-top as desired */
-  }
-  
-  .banner video {
-    width: 200px; /* Adjust the width as desired */
-    height: auto;
-    margin: 0 10px; /* Adjust the margin as desired */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .brandv {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 20px; /* Adjust the margin-top as desired */
-  }
-  
-  .brandv video {
-    width: 300px; /* Adjust the width as desired */
-    height: auto;
-    margin: 0 10px; /* Adjust the margin as desired */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .video-container {
-    position: relative;
+
+#filter-form select {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Styles for the submit form */
+#submit-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#submit-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#submit-form input[type="text"],
+#submit-form textarea {
     width: 100%;
-    max-width: 900px; /* Adjust the maximum width as desired */
-    height: 0;
-    padding-bottom: 40.25%; /* Set the aspect ratio (16:9) by adjusting the padding-bottom value */
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Adjust the object-fit property as desired */
-  }
-  
-  /* Add additional styles to enhance the appearance */
-  .video-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); /* Adjust the gradient colors and opacity as desired */
-  }
-  .image-below-slideshow {
-    display: flex;
-    justify-content: flex-end; /* Align from right to left */
-    align-items: center;
-    margin-top: 20px; /* Adjust the margin-top value as desired */
-  }
-  
-  .image-below-slideshow img {
-    width: 100%; /* Adjust the width as desired */
-    max-width: 600px; /* Adjust the maximum width as desired */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
-  }
-  
-  .image-below-slideshow img:hover {
-    transform: scale(1.05); /* Add a slight scale effect on hover */
-  }
-  
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#submit-form button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Styles for the search bar */
+#search-form {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#search-form input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+
+#search-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Styles for the filter form */
+#filter-form {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#filter-form label {
+  display: block;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#filter-form select {
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Styles for the submit form */
+#submit-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+#submit-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#submit-form input[type="text"],
+#submit-form textarea {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  outline: none;
+}
+
+#submit-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
