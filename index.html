@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bepents Tech Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("67p3IwSapi-SJftYS"); // Your Public Key
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bepents Tech Solutions</h1>
+        <p>Your One-Stop IT Partner for Digital Success!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Managed IT Services</li>
+            <li>Backup and Disaster Recovery</li>
+            <li>Cybersecurity Solutions</li>
+            <li>IT Consulting</li>
+            <li>Graphic Design & Digital Marketing</li>
+        </ul>
+        <p>Schedule your free consultation today!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us for a Free Consultation</h2>
+        <form id="contact-form" onsubmit="sendEmail(event)">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="user_name" required>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="user_email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="contact-form-status"></p>
+    </section>
+
+    <footer>
+        <p>Contact us at: <a href="mailto:bepentstech@proton.me">bepentstech@proton.me</a></p>
+        <p>Phone: 0100844779</p>
+        <p>Address: 01100, Msa Rd - Nairobi, Kenya</p>
+    </footer>
+
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            emailjs.sendForm("service_zf3du0r", "template_o8xemxb", "#contact-form")
+                .then(
+                    function(response) {
+                        document.getElementById("contact-form-status").innerHTML = "Message sent successfully!";
+                        document.getElementById("contact-form").reset(); // Clear form after submission
+                    },
+                    function(error) {
+                        document.getElementById("contact-form-status").innerHTML = "Failed to send the message. Please try again.";
+                    }
+                );
+        }
+    </script>
+</body>
+</html>
