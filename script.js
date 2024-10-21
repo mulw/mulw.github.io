@@ -50,3 +50,4 @@ function displayNewsArticles(articles) {
 
 // Fetch news when the page loads
 window.addEventListener('DOMContentLoaded', fetchTechNews);
+
