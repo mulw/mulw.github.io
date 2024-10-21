@@ -15,7 +15,13 @@ const newsContainer = document.getElementById('news-container');
 
 async function fetchTechNews() {
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=${apiKey}`);
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=${apiKey}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+            }
+        });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -50,4 +56,3 @@ function displayNewsArticles(articles) {
 
 // Fetch news when the page loads
 window.addEventListener('DOMContentLoaded', fetchTechNews);
-
