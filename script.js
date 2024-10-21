@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Google News API Fetch
-const apiKey = '881122986ae7429ab8496abe2b929e0f';  // Google News API key
+const apiKey = '993c8a7c7f9245638becf3696b406213';  // Google News API key
 const newsContainer = document.getElementById('news-container');
 
 async function fetchTechNews() {
