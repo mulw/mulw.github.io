@@ -1,48 +1,51 @@
+// Scroll Animation with JavaScript
+window.addEventListener('scroll', () => {
+    const services = document.querySelectorAll('.service-item');
+    services.forEach(service => {
+        const rect = service.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 150) {
+            service.classList.add('show');
+        }
+    });
+});
+
+// Google News API Fetch
+const apiKey = '881122986ae7429ab8496abe2b929e0f';  // Google News API key
 const newsContainer = document.getElementById('news-container');
 
-// Make an API call to a cybersecurity news source and get the latest news articles
-fetch('https://newsapi.org/v2/top-headlines?category=technology&keyword=cybersecurity&apiKey=881122986ae7429ab8496abe2b929e0f')
-  .then(response => response.json())
-  .then(data => {
-    const articles = data.articles;
+async function fetchTechNews() {
+    try {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=${apiKey}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data); // Log the response to check its structure
 
-    // Filter the articles based on the search term
-    const searchTerm = document.getElementById('search').value;
-    if (searchTerm) {
-      articles = articles.filter(article => article.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        if (data.articles && Array.isArray(data.articles)) {
+            displayNewsArticles(data.articles);
+        } else {
+            console.error('No articles found or invalid response structure:', data);
+        }
+    } catch (error) {
+        console.error('Error fetching the news:', error);
     }
+}
 
-    // Filter the articles based on the selected category
-    const selectedCategory = document.getElementById('filter').value;
-    if (selectedCategory !== 'all') {
-      articles = articles.filter(article => article.category === selectedCategory);
-    }
+function displayNewsArticles(articles) {
+    articles.forEach(article => {
+        const newsItem = document.createElement('div');
+        newsItem.classList.add('news-item');
+        
+        newsItem.innerHTML = `
+            <h3>${article.title}</h3>
+            <p>${article.description || 'No description available.'}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+        `;
+        
+        newsContainer.appendChild(newsItem);
+    });
+}
 
-    // Loop through the filtered articles and create HTML for each one
-    for (const article of articles) {
-      const articleHTML = `
-        <div class="news-article">
-          <h2>${article.title}</h2>
-          <p>${article.description}</p>
-          <time>${article.publishedAt}</time>
-          <a href="${article.url}" target="_blank">Read more</a>
-        </div>
-      `;
-
-      // Add the HTML to the news container
-      newsContainer.innerHTML += articleHTML;
-    }
-  });
-
-// Handle the submit form submission
-const submitForm = document.getElementById('submit-form');
-submitForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const title = document.getElementById('title').value;
-  const description = document.getElementById('description').value;
-  const url = document.getElementById('url').value;
-
-  // Submit the article to a backend server or database for storage
-  // and display a success message to the user
-});
+// Fetch news when the page loads
+window.addEventListener('DOMContentLoaded', fetchTechNews);
