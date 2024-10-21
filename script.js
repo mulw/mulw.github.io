@@ -22,7 +22,7 @@ async function fetchTechNews() {
         const data = await response.json();
         console.log(data); // Log the response to check its structure
 
-        if (data.articles && Array.isArray(data.articles)) {
+        if (data.articles && Array.isArray(data.articles) && data.articles.length > 0) {
             displayNewsArticles(data.articles);
         } else {
             console.error('No articles found or invalid response structure:', data);
@@ -33,16 +33,17 @@ async function fetchTechNews() {
 }
 
 function displayNewsArticles(articles) {
+    console.log('Displaying articles:', articles); // Log the articles being displayed
     articles.forEach(article => {
         const newsItem = document.createElement('div');
         newsItem.classList.add('news-item');
-        
+
         newsItem.innerHTML = `
             <h3>${article.title}</h3>
             <p>${article.description || 'No description available.'}</p>
             <a href="${article.url}" target="_blank">Read more</a>
         `;
-        
+
         newsContainer.appendChild(newsItem);
     });
 }
